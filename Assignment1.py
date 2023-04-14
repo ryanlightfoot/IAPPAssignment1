@@ -12,7 +12,22 @@ def AddStockCode(): #Option 1
     # prompts the user for a stock code
     # add values to others that are already stored
     # No item be priced higher than R1000.00
-    print("Add Stock code")
+    stockCodes = str([])
+    stockPrices = float([])
+    count = int([])
+
+    stockCode = input("What is the stock code? ")
+
+    stockPrice = input("What is the stock price? ")
+    while(int(stockPrice) > 1000):
+        print("Stock price cannot be above R1000.")
+        stockPrice = input("What is the stock price? ")
+
+    i = 0
+    
+
+
+
 
 def  SearchCode():
     # To find a specific stock code
