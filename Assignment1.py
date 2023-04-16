@@ -7,14 +7,17 @@ def main():
 
     select = input("What is your selection?: ")
 
+    if(select == "1"):
+        AddStockCode()
+
 
 def AddStockCode(): #Option 1
     # prompts the user for a stock code
     # add values to others that are already stored
     # No item be priced higher than R1000.00
-    stockCodes = str([])
-    stockPrices = float([])
-    count = int([])
+    stockCodes = ["ABC"]
+    stockPrices = [100]
+    count = [4]
 
     stockCode = input("What is the stock code? ")
 
@@ -23,12 +26,19 @@ def AddStockCode(): #Option 1
         print("Stock price cannot be above R1000.")
         stockPrice = input("What is the stock price? ")
 
-    i = 0
-    
+    if stockCode in stockCodes:
+        i = stockCodes.index(stockCode)
+        stockPrices[i] = stockPrice # Update to new stock price
+        count[i] += 1 # Update amount of stock
 
+    else:
+        stockCodes.append(stockCode) #Create new stock
+        stockPrices.append(stockPrice)
+        count.append(1)
 
-
-
+    print(stockCodes)
+    print(stockPrices)
+    print(count)
 def  SearchCode():
     # To find a specific stock code
     # Recieve a single string parameter (Stock code)
