@@ -7,7 +7,7 @@ def main():
 
     flag = True
 
-    while(flag):
+    while flag:
         print("---------------------")
         print("1. Add Stock Code")
         print("2. Add Stock Item")
@@ -16,13 +16,13 @@ def main():
 
         select = input("What is your selection?: ")
 
-        if(select == "1"):
+        if select == "1":
             AddStockCode()
-        elif(select == "2"):
+        elif select == "2":
             AddStockItem()
-        elif(select == "3"):
+        elif select == "3":
             DisplayStockList()
-        elif(select == "4"):
+        elif select == "4":
             flag = False
             return
         else:
@@ -37,7 +37,7 @@ def AddStockCode(): #Option 1
     stockCode = input("What is the stock code? ")
 
     stockPrice = float(input("What is the stock price? "))
-    while(int(stockPrice) > 1000):
+    while int(stockPrice) > 1000:
         print("Stock price cannot be above R1000.")
         stockPrice = float(input("What is the stock price? "))
 
@@ -73,7 +73,7 @@ def AddStockItem(): #Option 2
 
     amtStockAdd = int(input("How much stock do you want to add? "))
 
-    if((int(count[i]) + amtStockAdd) <= 100):
+    if (int(count[i]) + amtStockAdd) <= 100:
         count[i] += amtStockAdd
         return
     else:
